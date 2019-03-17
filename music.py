@@ -5,6 +5,7 @@ from discord.ext import commands
 from discord.utils import find
 import requests as rq
 
+bot_token=os.environ['BOT_TOKEN']
 client = commands.bot(command_prefix = '+')
 
 @client.event
