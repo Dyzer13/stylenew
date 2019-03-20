@@ -9,7 +9,7 @@ client = commands.Bot(command_prefix = ">")
 
 @client.event 
 async def on_ready():
-setGame = discord.Game("with me")
+Game = discord.Game("with me")
 await bot.change_presence(status=discord.Status.idle, activity=game)
 
 
