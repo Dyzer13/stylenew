@@ -8,7 +8,7 @@ bot = commands.Bot(command_prefix='>')
 async def on_ready():
     await bot.change_presence(activity=discord.streaming(name="waiting", url="https://www.twitch.tv/clow") 
 @bot.me()
- async def on_message(message)
+ async def on_message(message):
        if "DyzerYT" in message.content.lower():
            await message.channel.send("https://www.youtube.com/channel/UC6Zwte0sirqK2oAoy3AaBbA/videos")
            await bot.process_commands(message)
