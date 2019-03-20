@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix='>')
-@client.event
+@bot.event
 async def on_ready():
  await client.change.presence(game=discord.Game(name='Test'))
  print('bot is ready')
