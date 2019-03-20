@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-bot = commands.bot(description="blablabla", command_prefix"&")
+bot = commands.bot(description="blablabla", command_prefix="&")
 
 @bot.command()
 async def ping (ctx):
