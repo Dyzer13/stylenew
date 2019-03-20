@@ -8,7 +8,7 @@ async def ping(ctx):
     await ctx.send('pong')
 
     
-bot.command()
+@bot.command()
 async def names(ctx, name):
     ': Searched someones name'
     files = ["File1.txt", "File2.txt"]
