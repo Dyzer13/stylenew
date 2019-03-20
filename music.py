@@ -8,15 +8,36 @@ async def ping(ctx):
     await ctx.send('pong')
 
     
-    @client.command(pass_context=True)
-async def kick(ctx, member: discord.Member = None):
-    channel = ctx.message.channel
-    message = ctx.message
-    if not member:
-        await client.send_message(ctx.message.channel, 'Please specify a member')
+client = Client()
+
+COMMANDS = [
+                "!Version",
+                "!Owner",
+           ]
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
         return
-    await client.kick(member)
-    await client.say('{} got kicked'.format(member.mention))
-    await client.delete_message(message)
+
+
+    elif message.content.startswith('!Owner'):
+        embed = discord.Embed(title="The Owner is!", description="Chrome Panda", color=0x00ff00)
+        await client.send_message(message.channel, embed=embed)
+    elif message.content.startswith('!Version'):
+        embed = discord.Embed(title="Version for this Bot is", description="Virsion = 1.0", color=0x00ff00)
+        await client.send_message(message.channel, embed=embed)
+    elif message.content.startswith('!COMMANDS'):
+        embed = discord.Embed(title="Commands Are", description="Version, Owner", color=0x00ff00)
+        await client.send_message(Message.channel, embed=embed)
+
+
+
+@client.event
+async def on_ready():
+    print(client.user.name)
+    print(client.user.id)
+    print("PandaBot is ready to use!\n\nHave Fun!")
+    client.close()
 
 bot.run('NTU3ODM5ODcxNzQyNTc0NjE0.D3ONFQ.bw60zevXJO-k28s08Te_aeWh_qo')
