@@ -14,7 +14,12 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.content == "Money":
-        await client.send_message(message.channel, ":money_with_wings") 
+        await client.send_message(message.channel, ":money_with_wings:")
+
+@client.event
+async def on_message(message):
+   if message.content.startswith("!ping"):
+       await client.send_message(message.channel, "Pong!")
 
 
 
