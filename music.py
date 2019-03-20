@@ -1,11 +1,10 @@
 import discord
-import asyncio
-import youtube_dl
 from discord.ext import commands
-from discord.utils import find
-import requests as rq
 
+bot = commands.Bot(command_prefix='>')
 
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
 
-
-Sooon! !!!!!!
+bot.run('token')
