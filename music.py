@@ -6,7 +6,7 @@ bot = commands.Bot(command_prefix='>')
 
 @bot.event 
 async def on_ready():
-game = discord.Game ("with the api")
+game = discord.Game("with the api")
 await client.change_presence(status=discord.Status.idle, activity=game)
 
 
